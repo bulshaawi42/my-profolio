@@ -8,7 +8,7 @@ if (year) {
 
 const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
 const revealTargets = document.querySelectorAll(
-  ".about-content, .systems-heading, .system-card, .systems-note, .expertise-heading, .expertise-card, .statement p, .contact-panel",
+  ".about-content, .systems-heading, .systems-note, .expertise-heading, .expertise-card, .statement p, .contact-panel",
 );
 
 if (!motionPreference.matches && "IntersectionObserver" in window) {
