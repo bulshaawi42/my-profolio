@@ -6,6 +6,30 @@ if (year) {
   year.textContent = String(new Date().getFullYear());
 }
 
+const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+const revealTargets = document.querySelectorAll(
+  ".about-content, .systems-heading, .system-card, .systems-note, .expertise-heading, .expertise-card, .statement p, .contact-panel",
+);
+
+if (!motionPreference.matches && "IntersectionObserver" in window) {
+  document.documentElement.classList.add("motion-ready");
+  revealTargets.forEach((target) => target.classList.add("reveal"));
+
+  const revealObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.14, rootMargin: "0px 0px -36px 0px" },
+  );
+
+  revealTargets.forEach((target) => revealObserver.observe(target));
+}
+
 if (menuToggle && navigation) {
   const closeMenu = () => {
     menuToggle.setAttribute("aria-expanded", "false");
