@@ -14,9 +14,9 @@ Then visit `http://localhost:8000`.
 
 ## Publish with GitHub Pages
 
-1. Create a public repository named `bulshaawi42.github.io` under the `bulshaawi42` GitHub account.
+1. Use the public `my-profolio` repository under the `bulshaawi42` GitHub account.
 2. Add these site files to the repository and push them to the `main` branch.
 3. In the repository, open **Settings → Pages** and set the build and deployment source to **GitHub Actions**.
-4. The included workflow deploys the site on every push to `main`. Once its first run succeeds, it will be available at `https://bulshaawi42.github.io/`.
+4. The included workflow deploys the site on every push to `main`. Once its first run succeeds, it will be available at `https://bulshaawi42.github.io/my-profolio/`.
 
 To update the portfolio, edit `index.html` and `styles.css`, then push the changes to `main`.
